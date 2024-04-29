@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="custom-loader"></div>
+
+    <!-- Start Side Bar -->
+    <aside class="asideBar d-flex">
+        <section class="side-bar-contents left d-flex flex-column justify-content-between">
+            <nav>
+                <ul>
+                    <li class="text-white search">Search</li>
+                    <li class="text-white" id="categories">Categories</li>
+                    <li class="text-white area">Area</li>
+                    <li class="text-white ingridents">Ingredients</li>
+                    <li class="text-white contact-us">Contact Us</li>
+                </ul>
+            </nav>
+            <footer class="text-white">
+                <div class="icons social-media text-white ps-2">
+                    <i class="fab fa-facebook-f me-2"></i>
+                    <i class="fab fa-twitter me-2"></i>
+                    <i class="fas fa-globe"></i>
+                </div>
+                <p class="ps-2">Copyright  2019 All Rights Reserved.</p>
+            </footer>
+        </section>
+        <section class="side-bar-icons">
+            <div class="side-bar-icons-content">
+                <div class="logo">
+                    <img src="./images/logo.jpg" class="w-100" alt="logo">
+                </div>
+                <div class="barsIcon">
+                    <i class="fas fa-bars fa-2x open"></i>
+                    <i class="fas fa-times fa-2x d-none close"></i>
+                </div>
+                <div>
+                    <i class="fas fa-globe mb-1 d-block"></i>
+                    <i class="fas fa-share-alt"></i>
+                </div>
+            </div>
+        </section>
+    </aside>
+    <!-- End Side Bar -->
+    <!-------------------------- Start Content ---------------------->
+    <section class="pt-5 home pb-4">
+        <div class="container">
+            <div class="row row-home" id="row">
+
+            </div>
+            <div class="row row-meal-detail d-none text-white">
+            </div>
+
+            <div class="search-content d-none">
+                <input type="text" onkeyup="getInputData(this)" class="form-control searchByName me-3 my-input" placeholder="Search By Name">
+                <input type="text" class="form-control my-input" placeholder="Search By First Letter">
+            </div>
+            <div class="row row-meal-search mt-5 d-none text-white">
+            </div>
+            <div class="ps-5 row category-content d-none">
+
+            </div>
+            <div class="row category-content-filter d-none">
+
+            </div>
+            <div class="row category-content-filter-detail d-none text-white">
+
+            </div>
+            <div class="row all-area d-none text-white">
+
+            </div>
+            <div class=" row area-foods d-none text-white">
+
+            </div>
+
+            <div class="row all-ingrdients d-none text-white">
+
+            </div>
+            <div class=" row ingrdients-foods d-none text-white">
+
+            </div>
+            <div class="contact-us-content row d-none">
+                <div class="col-md-6 mb-2">
+                    <div class="item">
+                        <input type="text" onkeyup="checkName()" class="form-control userName me-3 " placeholder="Enter Your Name">
+                        <p class="alert alert-warning mt-1 d-none text-center" role="alert" id="alertName"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="item">
+                        <input type="email" onkeyup="checkEmail()" class="form-control email" placeholder="Enter Your Email">
+                        <p class="alert alert-warning mt-1 d-none text-center" id="alertEmail"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="item">
+                        <input type="text" onkeyup="checkPhone()" class="form-control phone me-3 " placeholder="Enter Your Phone">
+                        <p class="alert alert-warning mt-1 d-none text-center" id="alertPhone"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="item">
+                        <input type="number" onkeyup="checkAge()" class="form-control age" placeholder="Enter Your Age">
+                        <p class="alert alert-warning mt-1 d-none text-center" id="alertAge"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="item">
+                        <input type="text" onkeyup="checkPassword()" class="form-control password me-3 " placeholder="Enter Your Password">
+                        <p class="alert alert-warning mt-1 d-none text-center" id="alertPassword"></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="item">
+                        <input type="text" onkeyup="checkRepassword()" class="form-control repassword" placeholder="Repassword">
+                        <p class="alert alert-warning mt-1 d-none text-center" id="alertRepassword"></p>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-danger my-btn-submit mt-3 m-auto text-center d-flex justify-content-center" disabled>Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------------- End Content ---------------------->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
