@@ -34,6 +34,7 @@ aside {
     display: flex;
     position: fixed;
     overflow: hidden;
+    z-index: 1;
 }
 .side-bar-contents {
     width: 0px;

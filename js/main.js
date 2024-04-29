@@ -646,3 +646,5 @@ function checkEmail(){
         password: password.value
     }
 }
+
+asideBar.classList.add("w-70")
