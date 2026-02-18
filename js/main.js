@@ -513,10 +513,10 @@ function displayAllIngridents(items) {
 
 async function filterByIngrdeint(index) {
     let filterData = await data(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${allIngrdeintsData[index].strIngredient}`);
-    getFilterAreaData(filterData.slice(0,20));
+    getFilterAreaDatas(filterData.slice(0,20));
 }
 
-function getFilterAreaData(arr) {
+function getFilterAreaDatas(arr) {
     let cartoona = ``;
     hideElements();
     ingrdientsFoods.classList.replace("d-none", "d-flex");
