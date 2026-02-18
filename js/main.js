@@ -225,7 +225,7 @@ $(".barsIcon").click(function () {
         });
         $(".left ul").animate({ width: "100%" }, 1000);
 
-        for (var i = 0; i < item.length; i++) {
+        for (let i = 0; i < item.length; i++) {
             item.eq(i).css({ transform: "translateY(0%)", "transition-property:": "translateY", "transition-duration": ".5s", "transition-delay": `${transitionDelay}s` });
             item.eq(i).css({ opacity: "1", "transition-property:": "opacity", "transition-duration": ".5s", "transition-delay": `${transitionDelay}s` });
             item.eq(i).addClass("mb-3");
@@ -239,7 +239,7 @@ $(".barsIcon").click(function () {
     }
     else {
         let start = 480;
-        for (var i = 0; i < item.length; i++) {
+        for (let i = 0; i < item.length; i++) {
             item.eq(i).css({ transform: `translateY(${start}%)`, "transition-property:": "translateY", "transition-duration": ".5s" });
             item.eq(i).css({ opacity: "0", "transition-property:": "opacity", "transition-duration": ".5s", "transition-delay": `0.01s` });
             start += 20;
