@@ -4,7 +4,7 @@ let rowMealDetail = document.querySelector(".row.row-meal-detail");
 let openIcon = document.querySelector(".open");
 let closeIcon = document.querySelector(".close");
 
-let arr = [];
+let arr = [;
 let id;
 let mealDetail;
 let asideBar = document.querySelector(".asideBar");
