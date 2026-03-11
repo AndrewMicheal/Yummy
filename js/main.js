@@ -1,64 +1,64 @@
 const loading = document.querySelector(".custom-loader");
 const rowHome = document.querySelector(".row.row-home");
 const rowMealDetail = document.querySelector(".row.row-meal-detail");
-let openIcon = document.querySelector(".open");
-let closeIcon = document.querySelector(".close");
+const openIcon = document.querySelector(".open");
+const closeIcon = document.querySelector(".close");
 
 let arr = [];
 let id;
 let mealDetail;
 const asideBar = document.querySelector(".asideBar");
 let loadFlag = false;
-let search = document.querySelector(".search");
-let searchContent = document.querySelector(".search-content");
-let sideBarNav = document.querySelector(".asideBar .side-bar-contents");
-let searchByName = document.querySelector(".searchByName");
-let item = $(".left ul li");
-let socialMedia = document.querySelector(".left .social-media");
-let rowMealSearch = document.querySelector(".row-meal-search");
-let categories = document.getElementById("categories");
-let categoryContent = document.querySelector(".category-content");
+const search = document.querySelector(".search");
+const searchContent = document.querySelector(".search-content");
+const sideBarNav = document.querySelector(".asideBar .side-bar-contents");
+const searchByName = document.querySelector(".searchByName");
+const item = $(".left ul li");
+const socialMedia = document.querySelector(".left .social-media");
+const rowMealSearch = document.querySelector(".row-meal-search");
+const categories = document.getElementById("categories");
+const categoryContent = document.querySelector(".category-content");
 let allCategoryData;
-let categoryContentFilter = document.querySelector(".category-content-filter");
-let categoryFontentFilterDetail = document.querySelector(".category-content-filter-detail");
+const categoryContentFilter = document.querySelector(".category-content-filter");
+const categoryFontentFilterDetail = document.querySelector(".category-content-filter-detail");
 let categoryItem;
-let area = document.querySelector(".area");
-let allArea = document.querySelector(".all-area");
-let areaFoods = document.querySelector(".area-foods");
+const area = document.querySelector(".area");
+const allArea = document.querySelector(".all-area");
+const areaFoods = document.querySelector(".area-foods");
 let allAreaData;
-let ingridents = document.querySelector(".ingridents");
-let allIngrdients = document.querySelector(".all-ingrdients");
-let ingrdientsFoods = document.querySelector(".ingrdients-foods");
+const ingridents = document.querySelector(".ingridents");
+const allIngrdients = document.querySelector(".all-ingrdients");
+const ingrdientsFoods = document.querySelector(".ingrdients-foods");
 let allIngrdeintsData;
-let contactUs = document.querySelector(".contact-us");
-let contactUsContent = document.querySelector(".contact-us-content");
-let searchArr = [];
+const contactUs = document.querySelector(".contact-us");
+const contactUsContent = document.querySelector(".contact-us-content");
+const searchArr = [];
 
-let userName = document.querySelector(".userName");
-let alertName = document.getElementById("alertName");
+const userName = document.querySelector(".userName");
+const alertName = document.getElementById("alertName");
 let userNameFlag =false;
 
-let email = document.querySelector(".email");
-let alertEmail = document.getElementById('alertEmail');
+const email = document.querySelector(".email");
+const alertEmail = document.getElementById('alertEmail');
 let emailFlag = false;
 
-let phone = document.querySelector(".phone");
-let alertPhone = document.getElementById("alertPhone");
+const phone = document.querySelector(".phone");
+const alertPhone = document.getElementById("alertPhone");
 let phoneFlag = false;
 
-let age = document.querySelector(".age");
-let alertAge = document.getElementById("alertAge");
+const age = document.querySelector(".age");
+const alertAge = document.getElementById("alertAge");
 let ageFlag = false;
 
-let password = document.querySelector(".password");
-let alertPassword = document.getElementById("alertPassword");
+const password = document.querySelector(".password");
+const alertPassword = document.getElementById("alertPassword");
 let passwordFlag = false;
 
-let repassword = document.querySelector(".repassword");
-let alertRepassword = document.getElementById("alertRepassword");
+const repassword = document.querySelector(".repassword");
+const alertRepassword = document.getElementById("alertRepassword");
 let rePasswordFlag = false;
 
-let myBtnSubmit = document.querySelector(".my-btn-submit");
+const myBtnSubmit = document.querySelector(".my-btn-submit");
 
 function hideElements() {
     searchContent.classList.add("d-none");
@@ -82,7 +82,7 @@ async function data(url) {
         loading.classList.replace("d-none", "d-block");
     }
     const api = await fetch(`${url}`);
-    let apiResponse = await api.json();
+    const apiResponse = await api.json();
     loadFlag = true;
     if (loadFlag) {
         asideBar.classList.remove("d-none");
@@ -93,7 +93,7 @@ async function data(url) {
     return apiResponse.meals;
 }
 async function getMealsByName() {
-    let res = await data(`https://www.themealdb.com/api/json/v1/1/search.php?s=`);
+    const res = await data(`https://www.themealdb.com/api/json/v1/1/search.php?s=`);
     arr = [...res];
     getData();
 }
@@ -169,7 +169,7 @@ function getMealDetail(detail) {
         rowElements += `<div>
                                 <span class="tags-font mb-3 d-block">Tags :</span>`
         if (detail[i].strTags != null) {
-            let arrSplit = detail[i].strTags.split(",")
+            const arrSplit = detail[i].strTags.split(",")
             rowElements += `<div class = "d-flex removeComma">`
             for (let index = 0; index < arrSplit.length; index++) {
                 rowElements += `<span class="d-inline-block alert my-alert alert-danger">${arrSplit[index]}</span>`
@@ -207,7 +207,7 @@ search.onclick = async function () {
 
 async function getSearchDetail(index) {
     id = searchArr[index].idMeal;
-    let test = await data(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    const test = await data(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
     console.log(test);
     rowHome.classList.replace("d-flex", "d-none");
     rowMealDetail.classList.replace("d-none", "d-flex");
@@ -263,8 +263,8 @@ categories.onclick = async function () {
         rowHome.classList.replace("d-flex", "d-none");
         loading.classList.replace("d-none", "d-block");
     }
-    let api = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
-    let apiResponse = await api.json();
+    const api = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
+    const apiResponse = await api.json();
     loadFlag = true;
     if (loadFlag) {
         asideBar.classList.remove("d-none");
@@ -444,7 +444,7 @@ function displayAllAreas(items) {
 }
 
 async function filterByArea(index) {
-    let filterData = await data(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${allAreaData[index].strArea}`);
+    const filterData = await data(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${allAreaData[index].strArea}`);
     getFilterAreaData(filterData);
 }
 
@@ -512,7 +512,7 @@ function displayAllIngridents(items) {
 }
 
 async function filterByIngrdeint(index) {
-    let filterData = await data(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${allIngrdeintsData[index].strIngredient}`);
+    const filterData = await data(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${allIngrdeintsData[index].strIngredient}`);
     getFilterAreaDatas(filterData.slice(0,20));
 }
 
