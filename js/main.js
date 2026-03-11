@@ -1,13 +1,13 @@
-let loading = document.querySelector(".custom-loader");
-let rowHome = document.querySelector(".row.row-home");
-let rowMealDetail = document.querySelector(".row.row-meal-detail");
+const loading = document.querySelector(".custom-loader");
+const rowHome = document.querySelector(".row.row-home");
+const rowMealDetail = document.querySelector(".row.row-meal-detail");
 let openIcon = document.querySelector(".open");
 let closeIcon = document.querySelector(".close");
 
 let arr = [];
 let id;
 let mealDetail;
-let asideBar = document.querySelector(".asideBar");
+const asideBar = document.querySelector(".asideBar");
 let loadFlag = false;
 let search = document.querySelector(".search");
 let searchContent = document.querySelector(".search-content");
@@ -81,7 +81,7 @@ async function data(url) {
         rowHome.classList.replace("d-flex", "d-none");
         loading.classList.replace("d-none", "d-block");
     }
-    let api = await fetch(`${url}`);
+    const api = await fetch(`${url}`);
     let apiResponse = await api.json();
     loadFlag = true;
     if (loadFlag) {
@@ -300,7 +300,7 @@ function displayAllCategories(items) {
 }
 
 async function filterByCategory(index) {
-    let filterData = await data(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${allCategoryData[index].strCategory}`);
+    const filterData = await data(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${allCategoryData[index].strCategory}`);
     getFilterCategoryData(filterData.slice(0, 20));
 }
 
@@ -546,7 +546,7 @@ contactUs.onclick = function() {
 }
 
 function checkName() {
-    var regexName = /^([a-zA-Z]+\s*[A-Z]*)+$/;
+    const regexName = /^([a-zA-Z]+\s*[A-Z]*)+$/;
     if (regexName.test(userName.value.trim())) {
       alertName.classList.add("d-none");
       userNameFlag = true;
@@ -560,7 +560,7 @@ function checkName() {
 }
 
 function checkEmail(){
-    var regexEmail = /^\w+([-_.]\w+)*@\w+([.-]\w+)*\.\w+([-.]\w+)*$/;
+    const regexEmail = /^\w+([-_.]\w+)*@\w+([.-]\w+)*\.\w+([-.]\w+)*$/;
     if (regexEmail.test(email.value.trim())) {
       alertEmail.classList.add("d-none");
       emailFlag = true;
@@ -574,7 +574,7 @@ function checkEmail(){
   }
 
   function checkPhone(){
-    var regexPhone = /^(010|011|012|015)\d{8}$/;
+    const regexPhone = /^(010|011|012|015)\d{8}$/;
     if (regexPhone.test(phone.value.trim())) {
       alertPhone.classList.add("d-none");
       phoneFlag = true
@@ -587,7 +587,7 @@ function checkEmail(){
     checkFlags()
   }
   function checkAge(){
-    var regexAge = /^[1-9]\d$/;
+    const regexAge = /^[1-9]\d$/;
     if (regexAge.test(age.value.trim())) {
       alertAge.classList.add("d-none");
       ageFlag = true;
@@ -601,7 +601,7 @@ function checkEmail(){
   }
 
   function checkPassword(){
-    var regexPassword = /^([a-zA-Z]+[0-9]+[a-zA-Z]*)+$/;
+    const regexPassword = /^([a-zA-Z]+[0-9]+[a-zA-Z]*)+$/;
     if (regexPassword.test(password.value.trim()) && password.value.length >= 8) {
         alertPassword.classList.add("d-none");
         passwordFlag = true
@@ -638,7 +638,7 @@ function checkEmail(){
  }
 
  myBtnSubmit.onclick = function(){
-    let userInformation = {
+    const userInformation = {
         name : userName.value ,
         email : email.value ,
         phone : phone.value ,
