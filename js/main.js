@@ -374,7 +374,7 @@ function getCategoryDetails(detail) {
         rowElements += `<div>
                                 <span class="tags-font mb-3 d-block">Tags :</span>`
         if (detail[i].strTags != null) {
-            let arrSplit = detail[i].strTags.split(",")
+            const arrSplit = detail[i].strTags.split(",")
             rowElements += `<div class = "d-flex removeComma">`
             for (let index = 0; index < arrSplit.length; index++) {
                 rowElements += `<span class="d-inline-block alert my-alert alert-danger">${arrSplit[index]}</span>`
@@ -411,8 +411,8 @@ area.onclick = async function () {
         rowHome.classList.replace("d-flex", "d-none");
         loading.classList.replace("d-none", "d-block");
     }
-    let api = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`);
-    let apiResponse = await api.json();
+    const api = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`);
+    const apiResponse = await api.json();
     loadFlag = true;
     if (loadFlag) {
         asideBar.classList.remove("d-none");
@@ -478,8 +478,8 @@ ingridents.onclick = async function () {
         rowHome.classList.replace("d-flex", "d-none");
         loading.classList.replace("d-none", "d-block");
     }
-    let api = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`);
-    let apiResponse = await api.json();
+    const api = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`);
+    const apiResponse = await api.json();
     loadFlag = true;
     if (loadFlag) {
         asideBar.classList.remove("d-none");
